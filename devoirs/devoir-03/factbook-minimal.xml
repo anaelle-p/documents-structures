@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="factbook-minimal.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<mondial>
+    <continent id="IDC1" name="europe">
+    </continent>
+    <continent id="IDC2" name="asie">
+    </continent>
+    <continent id="IDC3" name="afrique">
+    </continent>
+    <continent id="IDC4" name="amerique">
+    </continent>
+    <continent id="IDC5" name="oceanie">
+    </continent>
+    <country id="IDP1" name="france" gdp_total="2000000000000" gdp_agri="73000000000">
+       <name>France</name>
+       <city longitude="2.3488" latitude="48.8534">
+           <name>Paris</name>
+           <population xmlns="inalco:documents-structures:ns">2187526</population>
+       </city>
+        <city longitude="-1.6833" latitude="48.0833">
+            <name>Rennes</name>
+            <population xmlns="inalco:documents-structures:ns">216815</population>
+        </city>
+    </country>
+</mondial>
