@@ -1,0 +1,9 @@
+1 - (/juicers/juicer[@type = "centrifugal"])
+2 - (/juicers/juicer[@type = "centrifugal"])[last()]
+3 - (/juicers/juicer[@type = "centrifugal"])[position() != 2]
+4 - (/juicers/juicer/@id/string())
+5 - ((/juicers/juicer/@id)[./string() = 'juiceman-jr'])/position()
+6 - (/juicers/juicer/@id)
+7 - ((/juicers/juicer/@id)[./string() = 'juiceman-jr'])/position()
+8 - (5 to 25)
+9 - (5 to 25)[. mod 5 = 0 ]

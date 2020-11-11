@@ -1,0 +1,52 @@
+Exercice XPATH - Documents Structurés
+
+PARTIE1
+1 -  /juicers
+2 -  /juicers/juicer
+3 -  //juicer
+4 -  /juicers/juicer
+5 -  /juicers/juicer/@*
+6 -  /juicers/juicer/@*/data()
+7 -  /juicers/juicer/*
+     //juicer/child::*
+8 -  /juicers/juicer[@type="gear"]
+9 -  /juicers/juicer[1]
+10 - /juicers/juicer[position()=last()]
+11 - /juicers/juicer[4]/warranty/text()
+12 - /juicers/juicer[cost < 100]
+13 - /juicers/juicer[not(image)]
+14 - /juicers/juicer[last()]
+     /juicers/juicer[position() = last()]
+15 - ancestor::*[last()]
+16 - count(//*)
+17 - //*[count(child::*)>=2]
+18. //*[2]
+19. //name/following-sibling::*[position()=1]/name()
+20. //text()[string-length(.) > 140]
+21. //juicer/retailer[contains(text(), 'html')]
+
+PARTIE 2
+1 -  /pdv_liste
+2 -  /pdv_liste/pdv/child::*
+3 -  /pdv_liste/pdv/ville/text()
+4 -  /pdv_liste/pdv[46]
+5 -  /pdv_liste/pdv/prix[position() = last()]
+6 -  /pdv_liste/pdv[@id = "3150005"]
+7 -  /pdv_liste/pdv[not(services/service[contains(text(), 'GPL')])]
+8 -  following-sibling::*
+9 -  /pdv_liste/pdv[@cp="16170"]/ville/text()
+10 - /pdv_liste/pdv/ouverture[@saufjour[contains(data(), 'Lundi')]]
+11 - /pdv_liste/pdv[services/service[contains(text(), 'Relais colis')]]
+12 - following::*[10][contains(text(), 'Piste poids lourds')]
+13 - /pdv_liste/pdv[rupture[@nom = "SP95" and @début[contains(data(), "2013-02-04")]]]/ville
+14 - /pdv_liste/pdv[fermeture[not(@*)]]
+15 - /pdv_liste/pdv/ville[contains(text(), 'La Mure')]/following-sibling::prix[@nom="E10"]
+     Oui
+16 - count(//pdv)
+     10824
+17 - /pdv_liste/pdv/adresse/string-length(text())
+18 - max(/pdv_liste/pdv/adresse/string-length(text()))
+19 - /pdv_liste/pdv[ouverture[not( @fin="20:00")]]
+20 - for $el in distinct-values(/pdv_liste/pdv/prix/@nom) return translate($el, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')
+21 - for $el in /pdv_liste/pdv/@latitude  return replace($el, '\.', '--')
+22 - for $el in /pdv_liste/pdv/prix/@maj return concat(substring-after($el ,' ' ), 'T', substring-before($el ,' ' ))
